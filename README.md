@@ -4,7 +4,7 @@ This repository is created to explain the VLSI design flow we've used in our pap
 
 "[Clock Data Compensation Aware Clock Tree Synthesis in Digital Circuits with Adaptive Clock Generation](http://ieeexplore.ieee.org/document/7927229/),"
 Taesik Na, Jong Hwan Ko and Saibal Mukhopadhyay,
-2017 Design, Automation & Test in Europe Conference & Exhibition (DATE), Mar 2017
+Design, Automation & Test in Europe Conference & Exhibition (DATE), Mar 2017
 
 Please cite our paper in your publications if it helps your research.
 
