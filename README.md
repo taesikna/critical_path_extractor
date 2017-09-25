@@ -13,7 +13,7 @@ Please cite our paper in your publications if it helps your research.
 
 Please make sure you have created gate-level netlist and parasitic file after performing place and route.
 We've used Synopsys IC compiler.
-These are the sample tcl command for our jpeg encoder to generate gate-level netlist and parasitic file on icc_shell.
+These are the sample tcl commands for our jpeg encoder to generate gate-level netlist and parasitic file on icc_shell.
 
 ```
 icc_shell> extract_rc
@@ -22,8 +22,8 @@ icc_shell> write_verilog jpeg_top.apr.v
 icc_shell> write_parasitics -no_name_mapping
 ```
 
-The series of commands will produce timing report (Timing.rpt),
-gate-level netlist (jpeg_top.apr.v) and parasitic file (jpeg_top.spf)
+This series of commands will produce timing report (Timing.rpt),
+gate-level netlist (jpeg_top.apr.v) and parasitic file (jpeg_top.spf).
 
 ### Critical path verilog generation
 
@@ -51,7 +51,7 @@ We will use Synopsys v2s to do this.
 v2s is the script which can be founded in Synopsys HSIM package.
 Please prepare standard cell SPICE netlist.
 We've used Synopsys 28nm standard cell SPICE netlist file (saed32nm_rvt.spf).
-Please run v2s as follows and substitute necessary strings with sed.
+Please run v2s as follows and substitute necessary strings.
 
 ```
 v2s jpeg_top.crit.spf.v -s saed32nm_rvt.spf -const0 0 -const1 evc -o jpeg_top.crit.spf.ckt
@@ -64,7 +64,7 @@ sed -i -e 's/VSS_dummy[0-9][0-9]/VSS/g' jpeg_top.crit.spf.ckt
 sed -i -e 's/VSS_dummy[0-9]/VSS/g' jpeg_top.crit.spf.ckt
 ```
 
-Now, we have obtained critical path SPICE netlist (jpeg_top.crit.spf.ckt) !!
-You are ready to run HSPICE simulation !!
+We have obtained critical path SPICE netlist (jpeg_top.crit.spf.ckt) !!
+You are now ready to run HSPICE simulation !!
 Please use saed32nm_rvt.spf, jpeg_top.crit.spf.ckt, jpeg_top.crit.spf.parasitics.ckt, and jpeg_top.force.ckt (You might have to change the forcing value if necessary) for HSPICE simulation for the delay characterization !!!
 
