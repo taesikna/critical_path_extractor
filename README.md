@@ -36,7 +36,9 @@ Please run the script in the following way.
 ```
 
 This will create,
+
 | File name | Description |
+| --------- | ----------- |
 | jpeg_top.crit.v | Critical path only gate-level netlist verilog. This is a verilog file for a reference. |
 | jpeg_top.crit.spf.v | Critical path only gate-level netlist verilog in which the net names are changed based on Timing.rpt file to reflect parasitics. We will convert this to SPICE netlist. And the resulting SPICE netlist will be used with critical path parasitic file for later HSPICE simulation. |
 | jpeg_top.crit.spf.parasitics.ckt | Critical path only parasitic file. |
